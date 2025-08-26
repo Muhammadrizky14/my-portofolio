@@ -13,7 +13,7 @@ function Footer() {
           <a href="https://www.tiktok.com/@bwyrufh" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
             <i className="bi bi-tiktok"></i>
           </a>
-          <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <a href="https://www.linkedin.com/in/rizky-drtyba-69457a379/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
             <i className="bi bi-linkedin"></i>
           </a>
           <a href="https://github.com/Muhammadrizky14" target="_blank" rel="noopener noreferrer" aria-label="GitHub">

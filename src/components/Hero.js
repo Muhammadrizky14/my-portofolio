@@ -45,13 +45,13 @@ function Hero() {
     <section className="hero" id="home">
       <div className="hero-mobile-wrapper">
         <div className="social-links">
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.linkedin.com/in/rizky-drtyba-69457a379/" target="_blank" rel="noopener noreferrer">
             <Linkedin size={24} />
           </a>
           <a href="https://wa.me/yourphone" target="_blank" rel="noopener noreferrer">
             <MessageCircle size={24} />
           </a>
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+          <a href="https://github.com/Muhammadrizky14" target="_blank" rel="noopener noreferrer">
             <GitHub size={24} />
           </a>
         </div>
@@ -61,7 +61,7 @@ function Hero() {
         </div>
 
         <div className="hero-content">
-          <h1>Muhammad Rizky</h1>
+          <h1>Muhammad Rizky Budi Saputra</h1>
           <h2 className="typing-text">{text}<span className="cursor">|</span></h2>
           <button className="contact-button" onClick={handleContactClick}>
             Contact Me

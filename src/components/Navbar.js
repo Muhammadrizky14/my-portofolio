@@ -8,6 +8,7 @@ function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [activeNav, setActiveNav] = useState('#home');
 
   useEffect(() => {
     const handleResize = () => {
@@ -35,18 +36,38 @@ function Navbar() {
   return (
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="nav-container">
-        <div className="nav-brand">Rizky.</div>
+        <div className="nav-brand">Portofolio</div>
         {isMobile ? (
           <button className="menu-toggle" onClick={toggleMenu}>
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         ) : (
           <div className="nav-links desktop">
-            <a href="#home" className="active">Home</a>
-            <a href="#about">Tentang Saya</a>
-            <a href="#skills">Keahlian</a>
-            <a href="#projects">Project</a>
-            <a href="#contact">Contact</a>
+            <a
+              href="#home"
+              className={activeNav === '#home' ? 'active' : ''}
+              onClick={() => setActiveNav('#home')}
+            >Home</a>
+            <a
+              href="#about"
+              className={activeNav === '#about' ? 'active' : ''}
+              onClick={() => setActiveNav('#about')}
+            >Tentang Saya</a>
+            <a
+              href="#skills"
+              className={activeNav === '#skills' ? 'active' : ''}
+              onClick={() => setActiveNav('#skills')}
+            >Keahlian</a>
+            <a
+              href="#projects"
+              className={activeNav === '#projects' ? 'active' : ''}
+              onClick={() => setActiveNav('#projects')}
+            >Project</a>
+            <a
+              href="#contact"
+              className={activeNav === '#contact' ? 'active' : ''}
+              onClick={() => setActiveNav('#contact')}
+            >Contact</a>
             <button className="theme-toggle" onClick={toggleTheme}>
               {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
             </button>
@@ -55,11 +76,31 @@ function Navbar() {
       </div>
       {isMobile && (
         <div className={`mobile-menu ${isMenuOpen ? 'show' : ''}`}>
-          <a href="#home">Home</a>
-          <a href="#tentangsaya">About</a>
-          <a href="#keahlian">Keahlian</a>
-          <a href="#project">Project</a>
-          <a href="#contact">Contact</a>
+          <a
+            href="#home"
+            className={activeNav === '#home' ? 'active' : ''}
+            onClick={() => setActiveNav('#home')}
+          >Home</a>
+          <a
+            href="#about"
+            className={activeNav === '#about' ? 'active' : ''}
+            onClick={() => setActiveNav('#about')}
+          >Tentang Saya</a>
+          <a
+            href="#skills"
+            className={activeNav === '#skills' ? 'active' : ''}
+            onClick={() => setActiveNav('#skills')}
+          >Keahlian</a>
+          <a
+            href="#projects"
+            className={activeNav === '#projects' ? 'active' : ''}
+            onClick={() => setActiveNav('#projects')}
+          >Project</a>
+          <a
+            href="#contact"
+            className={activeNav === '#contact' ? 'active' : ''}
+            onClick={() => setActiveNav('#contact')}
+          >Contact</a>
         </div>
       )}
     </nav>
