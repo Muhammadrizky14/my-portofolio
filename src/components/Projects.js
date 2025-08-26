@@ -218,19 +218,25 @@ function Projects() {
           )}
           {/* Modal Project Detail */}
           {modalIdx !== null && (
-            <div style={{
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              width: '100%',
-              height: '100%',
-              background: 'rgba(252, 252, 252, 0.85)',
-              zIndex: 1000,
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              transition: 'background 0.2s',
-            }}>
+            <div
+              style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '100%',
+                background: 'rgba(252, 252, 252, 0.85)',
+                zIndex: 1000,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                transition: 'background 0.2s',
+              }}
+              onClick={e => {
+                // Only close if click is on the overlay, not inside the modal
+                if (e.target === e.currentTarget) setModalIdx(null);
+              }}
+            >
               <div
                 style={{
                   background: 'var(--card-bg, #181f2e)',
@@ -258,10 +264,25 @@ function Projects() {
                 tabIndex={0}
                 aria-modal="true"
                 role="dialog"
+                onClick={e => e.stopPropagation()}
               >
                 <button
                   onClick={() => setModalIdx(null)}
-                  style={{ position: 'absolute', top: 24, right: 32, background: 'none', border: 'none', color: '#fff', fontSize: 38, cursor: 'pointer', fontWeight: 700, lineHeight: 1, zIndex: 2 }}
+                  style={{
+                    position: 'absolute',
+                    top: 24,
+                    right: 32,
+                    background: 'none',
+                    border: 'none',
+                    color: '#fff',
+                    fontSize: 38,
+                    cursor: 'pointer',
+                    fontWeight: 700,
+                    lineHeight: 1,
+                    zIndex: 10,
+                    padding: 0,
+                    margin: 0,
+                  }}
                   aria-label="Close"
                 >&times;</button>
                 {/* Gambar header full width */}
