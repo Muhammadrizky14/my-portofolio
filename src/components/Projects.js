@@ -161,7 +161,22 @@ function Projects() {
           <div style={{ textAlign: 'center', color: 'var(--subtitle-color, #bfc9e0)', fontSize: '1.2rem', marginBottom: 40 }}>A selection of my best work</div>
         </ScrollAnimation>
         <ScrollAnimation delay={400}>
-          <div className="projects-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 40, justifyContent: 'center' }}>
+          <div
+            className="projects-grid"
+            style={{
+              display: 'grid',
+              gridTemplateColumns: '1fr',
+              gap: 40,
+              justifyContent: 'center',
+            }}
+          >
+            <style>{`
+              @media (min-width: 768px) {
+                .projects-grid {
+                  grid-template-columns: repeat(2, 1fr) !important;
+                }
+              }
+            `}</style>
             {visibleProjects.map((project, idx) => (
               <div key={project.id} className="project-card" style={{ background: 'var(--card-bg, #232c43)', borderRadius: 24, boxShadow: '0 4px 32px #0002', width: '100%', maxWidth: 540, padding: 0, overflow: 'hidden', display: 'flex', flexDirection: 'column', position: 'relative', margin: '0 auto' }}>
                 {/* Badge Kategori */}
