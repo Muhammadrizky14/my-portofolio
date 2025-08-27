@@ -44,6 +44,10 @@ function Hero() {
   return (
     <section className="hero" id="home">
       <div className="hero-mobile-wrapper">
+        <div className="profile-image">
+          <img src="/images/about.jpg" alt="Rizky" />
+        </div>
+
         <div className="social-links">
           <a href="https://www.linkedin.com/in/rizky-drtyba-69457a379/" target="_blank" rel="noopener noreferrer">
             <Linkedin size={24} />
@@ -54,10 +58,6 @@ function Hero() {
           <a href="https://github.com/Muhammadrizky14" target="_blank" rel="noopener noreferrer">
             <GitHub size={24} />
           </a>
-        </div>
-        
-        <div className="profile-image">
-          <img src="/images/about.jpg" alt="Rizky" />
         </div>
 
         <div className="hero-content">

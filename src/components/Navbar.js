@@ -4,13 +4,12 @@ import { ThemeContext } from '../App';
 import { Moon, Sun, Menu, X } from 'react-feather';
 
 function Navbar() {
-  // Section IDs in order
-  const sectionIds = ['#home', '#about', '#skills', '#projects', '#contact'];
-
   // Track which section is in view for scroll-based nav highlight
   const [scrolledNav, setScrolledNav] = useState('#home');
 
   useEffect(() => {
+    // Section IDs in order
+    const sectionIds = ['#home', '#about', '#skills', '#projects', '#contact'];
     const handleScrollSpy = () => {
       let found = '#home';
       for (let i = 0; i < sectionIds.length; i++) {
@@ -32,7 +31,7 @@ function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [activeNav, setActiveNav] = useState('#home');
+  // const [activeNav, setActiveNav] = useState('#home');
 
   useEffect(() => {
     const handleResize = () => {
@@ -70,27 +69,22 @@ function Navbar() {
           <div className="nav-links desktop">
             <a
               href="#home"
-              onClick={() => setActiveNav('#home')}
               style={scrolledNav === '#home' ? activeColor : {}}
             >Home</a>
             <a
               href="#about"
-              onClick={() => setActiveNav('#about')}
               style={scrolledNav === '#about' ? activeColor : {}}
             >Tentang Saya</a>
             <a
               href="#skills"
-              onClick={() => setActiveNav('#skills')}
               style={scrolledNav === '#skills' ? activeColor : {}}
             >Keahlian</a>
             <a
               href="#projects"
-              onClick={() => setActiveNav('#projects')}
               style={scrolledNav === '#projects' ? activeColor : {}}
             >Project</a>
             <a
               href="#contact"
-              onClick={() => setActiveNav('#contact')}
               style={scrolledNav === '#contact' ? activeColor : {}}
             >Contact</a>
             <button className="theme-toggle" onClick={toggleTheme}>
@@ -103,27 +97,22 @@ function Navbar() {
         <div className={`mobile-menu ${isMenuOpen ? 'show' : ''}`}>
           <a
             href="#home"
-            onClick={() => setActiveNav('#home')}
             style={scrolledNav === '#home' ? activeColor : {}}
           >Home</a>
           <a
             href="#about"
-            onClick={() => setActiveNav('#about')}
             style={scrolledNav === '#about' ? activeColor : {}}
           >Tentang Saya</a>
           <a
             href="#skills"
-            onClick={() => setActiveNav('#skills')}
             style={scrolledNav === '#skills' ? activeColor : {}}
           >Keahlian</a>
           <a
             href="#projects"
-            onClick={() => setActiveNav('#projects')}
             style={scrolledNav === '#projects' ? activeColor : {}}
           >Project</a>
           <a
             href="#contact"
-            onClick={() => setActiveNav('#contact')}
             style={scrolledNav === '#contact' ? activeColor : {}}
           >Contact</a>
         </div>
